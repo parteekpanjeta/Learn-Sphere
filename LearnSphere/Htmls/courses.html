@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Courses — LearnSphere</title>
   <link rel="stylesheet" href="../Csss/courses.css">
+  <link rel="stylesheet" href="../Csss/profile-menu.css">
 </head>
 <body>
   <input class="theme-toggle" type="checkbox" id="theme-toggle">
@@ -19,6 +20,20 @@
         <div class="header-actions">
           <label class="theme-switch" for="theme-toggle">Dark mode</label>
           <a class="button secondary" href="login.html">Log in</a><a class="button" href="signup.html">Join</a>
+          <details class="profile-menu">
+            <summary aria-label="Open profile menu">
+              <span class="profile-avatar" aria-hidden="true"></span>
+              <span class="profile-name">Profile</span>
+              <span class="profile-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="profile-dropdown">
+              <p class="profile-dropdown-heading">LEARNER ACCOUNT</p>
+              <a class="profile-dropdown-link" href="my-courses.html">
+                <span>My Courses</span>
+              </a>
+              <button class="profile-logout" type="button" data-logout>Log out</button>
+            </div>
+          </details>
         </div>
       </div>
     </header>
@@ -34,35 +49,44 @@
       </section>
 
       <div class="container filters">
-        <a href="#courses">All</a><a href="#courses">Technology</a><a href="#courses">Design</a>
-        <a href="#courses">Leadership</a><a href="#courses">Business</a>
+        <button type="button" class="active" data-course-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-course-filter="technology" aria-pressed="false">Technology</button>
+        <button type="button" data-course-filter="design" aria-pressed="false">Design</button>
+        <button type="button" data-course-filter="leadership" aria-pressed="false">Leadership</button>
+        <button type="button" data-course-filter="business" aria-pressed="false">Business</button>
+      </div>
+
+      <div class="container course-search">
+        <label for="course-search-input">Search courses</label>
+        <input id="course-search-input" type="search" placeholder="Search by course, skill, or topic" autocomplete="off" aria-controls="course-list">
+        <p id="course-search-status" class="search-status" role="status" aria-live="polite" hidden>No courses found</p>
       </div>
 
       <section id="courses" class="section">
-        <div class="container course-grid">
-          <article class="course-card">
+        <div class="container course-grid" id="course-list">
+          <article class="course-card" data-category="technology" data-search="artificial intelligence ai machine learning data science analytics">
             <div class="course-image image-ai" role="img" aria-label="AI workstation"></div>
-            <div class="course-content"><p class="course-meta">Technology · 12 weeks · ★ 4.9</p><h3>Advanced Generative AI</h3><p>Build useful AI workflows and evaluate them responsibly.</p><div class="course-bottom"><strong>$899</strong><a href="course-details.html">Learn more</a></div></div>
+            <div class="course-content"><p class="course-meta">Technology · 12 weeks · ★ 4.9</p><h3>Advanced Generative AI</h3><p>Build useful AI workflows and evaluate them responsibly.</p><div class="course-bottom"><strong>$899</strong><div class="course-actions"><a href="course-details.html?id=ai">Learn more</a><button class="cart-add-button" type="button" data-cart-course="ai">Add to cart</button></div></div></div>
           </article>
-          <article class="course-card">
+          <article class="course-card" data-category="design">
             <div class="course-image image-design" role="img" aria-label="Design sketchbook"></div>
-            <div class="course-content"><p class="course-meta">Design · 8 weeks · ★ 4.8</p><h3>Strategic Product Design</h3><p>Turn unclear problems into thoughtful products.</p><div class="course-bottom"><strong>$749</strong><a href="course-details.html">Learn more</a></div></div>
+            <div class="course-content"><p class="course-meta">Design · 8 weeks · ★ 4.8</p><h3>Strategic Product Design</h3><p>Turn unclear problems into thoughtful products.</p><div class="course-bottom"><strong>$749</strong><div class="course-actions"><a href="course-details.html?id=design">Learn more</a><button class="cart-add-button" type="button" data-cart-course="design">Add to cart</button></div></div></div>
           </article>
-          <article class="course-card">
+          <article class="course-card" data-category="leadership">
             <div class="course-image image-leadership" role="img" aria-label="Leadership discussion"></div>
-            <div class="course-content"><p class="course-meta">Leadership · 6 weeks · ★ 4.9</p><h3>Emotional Intelligence</h3><p>Develop empathy, awareness, and clear communication.</p><div class="course-bottom"><strong>$599</strong><a href="course-details.html">Learn more</a></div></div>
+            <div class="course-content"><p class="course-meta">Leadership · 6 weeks · ★ 4.9</p><h3>Emotional Intelligence</h3><p>Develop empathy, awareness, and clear communication.</p><div class="course-bottom"><strong>$599</strong><div class="course-actions"><a href="course-details.html?id=leadership">Learn more</a><button class="cart-add-button" type="button" data-cart-course="leadership">Add to cart</button></div></div></div>
           </article>
-          <article class="course-card">
+          <article class="course-card" data-category="business">
             <div class="course-image image-business" role="img" aria-label="Finance notes"></div>
-            <div class="course-content"><p class="course-meta">Business · 10 weeks · ★ 4.7</p><h3>Venture Capital Foundations</h3><p>Understand early-stage funding and investment decisions.</p><div class="course-bottom"><strong>$1,200</strong><a href="course-details.html">Learn more</a></div></div>
+            <div class="course-content"><p class="course-meta">Business · 10 weeks · ★ 4.7</p><h3>Venture Capital Foundations</h3><p>Understand early-stage funding and investment decisions.</p><div class="course-bottom"><strong>$1,200</strong><div class="course-actions"><a href="course-details.html?id=business">Learn more</a><button class="cart-add-button" type="button" data-cart-course="business">Add to cart</button></div></div></div>
           </article>
-          <article class="course-card">
+          <article class="course-card" data-category="design">
             <div class="course-image image-story" role="img" aria-label="Storyboard sketches"></div>
-            <div class="course-content"><p class="course-meta">Design · 4 weeks · ★ 4.8</p><h3>Advanced Narrative Design</h3><p>Create clear, memorable stories for digital products.</p><div class="course-bottom"><strong>$499</strong><a href="course-details.html">Learn more</a></div></div>
+            <div class="course-content"><p class="course-meta">Design · 4 weeks · ★ 4.8</p><h3>Advanced Narrative Design</h3><p>Create clear, memorable stories for digital products.</p><div class="course-bottom"><strong>$499</strong><div class="course-actions"><a href="course-details.html?id=narrative-design">Learn more</a><button class="cart-add-button" type="button" data-cart-course="narrative-design">Add to cart</button></div></div></div>
           </article>
-          <article class="course-card">
+          <article class="course-card" data-category="technology" data-search="artificial intelligence ai machine learning data science analytics">
             <div class="course-image image-data" role="img" aria-label="Data charts"></div>
-            <div class="course-content"><p class="course-meta">Technology · 8 weeks · ★ 4.9</p><h3>Leading with Data</h3><p>Turn evidence into decisions your team can act on.</p><div class="course-bottom"><strong>$799</strong><a href="course-details.html">Learn more</a></div></div>
+            <div class="course-content"><p class="course-meta">Technology · 8 weeks · ★ 4.9</p><h3>Leading with Data</h3><p>Turn evidence into decisions your team can act on.</p><div class="course-bottom"><strong>$799</strong><div class="course-actions"><a href="course-details.html?id=data">Learn more</a><button class="cart-add-button" type="button" data-cart-course="data">Add to cart</button></div></div></div>
           </article>
         </div>
       </section>
@@ -109,5 +133,10 @@
       </div>
     </footer>
   </div>
+  <script src="../Jsss/courses.js" defer></script>
+  <script src="../Jsss/profile-menu.js" defer></script>
+  <script src="../Jsss/cart.js" defer></script>
+  <script src="../Js/auth.js" defer></script>
+  <script src="../Js/navbar.js" defer></script>
 </body>
 </html>

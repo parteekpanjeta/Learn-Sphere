@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Generative AI — LearnSphere</title>
+  <title>Course Details - LearnSphere</title>
   <link rel="stylesheet" href="../Csss/course-details.css">
+  <link rel="stylesheet" href="../Csss/profile-menu.css">
 </head>
 <body>
   <input class="theme-toggle" type="checkbox" id="theme-toggle">
@@ -13,22 +14,44 @@
       <div class="container nav-row">
         <a class="brand" href="index.html">LearnSphere</a>
         <nav class="main-nav"><a href="index.html">Home</a><a class="active" href="courses.html">Courses</a><a href="instructors.html">Faculty</a><a href="contact.html">Contact</a></nav>
-        <div class="header-actions"><label class="theme-switch" for="theme-toggle">Dark mode</label><a class="button secondary" href="login.html">Log in</a><a class="button" href="signup.html">Join</a></div>
+        <div class="header-actions"><label class="theme-switch" for="theme-toggle">Dark mode</label><a class="button secondary" href="login.html">Log in</a><a class="button" href="signup.html">Join</a>
+          <details class="profile-menu">
+            <summary aria-label="Open profile menu">
+              <span class="profile-avatar" aria-hidden="true"></span>
+              <span class="profile-name">Profile</span>
+              <span class="profile-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="profile-dropdown">
+              <p class="profile-dropdown-heading">LEARNER ACCOUNT</p>
+              <a class="profile-dropdown-link" href="my-courses.html">
+                <span>My Courses</span>
+              </a>
+              <button class="profile-logout" type="button" data-logout>Log out</button>
+            </div>
+          </details>
+        </div>
       </div>
     </header>
 
     <main>
       <section class="section detail-hero">
         <div class="container detail-grid">
-          <div class="detail-image" role="img" aria-label="AI course workstation"></div>
+          <div class="detail-image image-ai" id="course-image" role="img" aria-label="Course image"></div>
           <div class="detail-info">
-            <p class="eyebrow">Technology · Autumn cohort</p>
-            <h1>Advanced Generative AI</h1>
-            <p class="muted">Move beyond prompts and learn to build useful AI systems.</p>
-            <div class="facts"><strong>12 weeks</strong> · 6 hours per week · ★ 4.9</div>
-            <p>Instructor: Dr. Arun Mehta</p>
-            <p class="price">$899 USD</p>
-            <a class="button" href="signup.html">Buy now</a>
+            <p class="eyebrow" id="course-category">Technology - Autumn cohort</p>
+            <h1 id="course-title">Advanced Generative AI</h1>
+            <p class="muted" id="course-description">Move beyond prompts and learn to build useful AI systems.</p>
+            <div class="facts"><strong id="course-duration">12 weeks</strong> - <span id="course-hours">6 hours per week</span> - <span id="course-rating">Rating 4.9</span></div>
+            <p>Instructor: <span id="course-instructor">Dr. Arun Mehta</span></p>
+            <p class="price" id="course-price">$899 USD</p>
+            <div class="course-purchase-actions">
+              <button class="button" id="buy-course" type="button" data-enroll-course>Buy now</button>
+              <button class="cart-add-button" id="add-to-cart" type="button" data-cart-course="ai">Add to cart</button>
+            </div>
+            <div class="enrollment-feedback" id="enrollment-feedback" role="status" aria-live="polite" hidden>
+              <span id="enrollment-message"></span>
+              <a href="my-courses.html">View My Courses</a>
+            </div>
           </div>
         </div>
       </section>
@@ -37,19 +60,17 @@
         <div class="container two-columns">
           <div>
             <p class="eyebrow">Learning outcomes</p><h2>What you will learn</h2>
-            <ul class="simple-list"><li>Choose the right model for a task.</li><li>Design reliable prompts and context.</li><li>Evaluate quality and safety.</li><li>Build a practical final project.</li></ul>
+            <ul class="simple-list" id="course-outcomes"></ul>
           </div>
           <div>
             <p class="eyebrow">Course plan</p><h2>Curriculum</h2>
-            <div class="lesson"><span>Models without mythology</span><span>Week 1–2</span></div>
-            <div class="lesson"><span>Prompt and context systems</span><span>Week 3–4</span></div>
-            <div class="lesson"><span>Useful evaluation</span><span>Week 5–7</span></div>
-            <div class="lesson"><span>Final project</span><span>Week 8–12</span></div>
+            <div id="course-curriculum"></div>
           </div>
         </div>
       </section>
 
-      <section class="section"><div class="container cta"><h2>Build something useful.</h2><p>Enrollment includes workshops, feedback, and course materials.</p><a class="button" href="signup.html">Buy course — $899</a></div></section>
+      <section class="section"><div class="container cta"><h2 id="course-cta-title">Build something useful.</h2><p id="course-cta-description">Enrollment includes workshops, feedback, and course materials.</p><button class="button" id="course-cta-button" type="button" data-enroll-course>Buy course</button></div></section>
+
     </main>
 
     <footer class="site-footer">
@@ -93,5 +114,10 @@
       </div>
     </footer>
   </div>
+  <script src="../Jsss/course-details.js" defer></script>
+  <script src="../Jsss/profile-menu.js" defer></script>
+  <script src="../Jsss/cart.js" defer></script>
+  <script src="../Js/auth.js" defer></script>
+  <script src="../Js/navbar.js" defer></script>
 </body>
 </html>

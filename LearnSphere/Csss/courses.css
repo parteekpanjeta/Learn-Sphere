@@ -261,7 +261,33 @@ p { margin-top: 0; }
 .page-heading p { margin-bottom: 0; color: var(--muted); }
 
 .filters { padding: 22px 0; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-.filters a { color: var(--muted); font-size: .7rem; text-decoration: none; text-transform: uppercase; }
+.filters button {
+  padding: 0;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+.filters button:hover, .filters button.active { color: var(--text); }
+.filters button:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+
+.course-search { padding-bottom: 24px; }
+.course-search label { display: block; margin-bottom: 7px; font-size: .75rem; font-weight: bold; text-transform: uppercase; }
+.course-search input {
+  width: 100%;
+  max-width: 560px;
+  padding: 13px 15px;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  font: inherit;
+}
+.course-search input:focus { outline: 2px solid var(--text); outline-offset: 2px; }
+.search-status { margin: 14px 0 0; color: var(--muted); }
+.course-card[hidden] { display: none; }
 
 #courses {
   padding-top: 0;

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create account — LearnSphere</title>
   <link rel="stylesheet" href="../Csss/signup.css">
+  <link rel="stylesheet" href="../Csss/profile-menu.css">
 </head>
 <body>
   <input class="theme-toggle" type="checkbox" id="theme-toggle">
@@ -13,24 +14,48 @@
       <div class="container nav-row">
         <a class="brand" href="index.html">LearnSphere</a>
         <nav class="main-nav"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="contact.html">Contact</a></nav>
-        <div class="header-actions"><label class="theme-switch" for="theme-toggle">Dark mode</label><a class="button secondary" href="login.html">Log in</a></div>
+        <div class="header-actions"><label class="theme-switch" for="theme-toggle">Dark mode</label><a class="button secondary" href="login.html">Log in</a>
+          <details class="profile-menu">
+            <summary aria-label="Open profile menu">
+              <span class="profile-avatar" aria-hidden="true"></span>
+              <span class="profile-name">Profile</span>
+              <span class="profile-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="profile-dropdown">
+              <p class="profile-dropdown-heading">LEARNER ACCOUNT</p>
+              <a class="profile-dropdown-link" href="my-courses.html">
+                <span>My Courses</span>
+              </a>
+              <button class="profile-logout" type="button" data-logout>Log out</button>
+            </div>
+          </details>
+        </div>
       </div>
     </header>
 
     <main class="auth-layout">
       <div class="auth-image" role="img" aria-label="Student studying in a library"></div>
       <section class="auth-panel">
-        <form class="auth-form" action="#">
+        <form class="auth-form" id="signup-form" action="#" novalidate>
           <p class="eyebrow">Join LearnSphere</p>
           <h1>Create an account.</h1>
-          <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
-          <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
+          <div class="field"><label for="name">Full name</label><input id="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required></div>
           <div class="form-row">
-            <div class="field"><label for="password">Password</label><input id="password" type="password" required></div>
-            <div class="field"><label for="confirm">Confirm password</label><input id="confirm" type="password" required></div>
+            <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="new-password" minlength="8" required></div>
+            <div class="field"><label for="confirm">Confirm password</label><input id="confirm" type="password" autocomplete="new-password" required></div>
           </div>
-          <p class="form-note"><label><input type="checkbox" required> I agree to the terms</label></p>
+          <p class="form-note"><label><input id="terms" type="checkbox" required> I agree to the terms</label></p>
+          <div class="field captcha-field">
+            <label for="captcha-input">CAPTCHA verification</label>
+            <div class="captcha-challenge">
+              <span class="captcha-code" id="captcha-code" aria-label="Generated CAPTCHA" aria-live="polite"></span>
+              <button class="captcha-refresh" id="captcha-refresh" type="button" aria-label="Generate a new CAPTCHA">Refresh</button>
+            </div>
+            <input id="captcha-input" type="text" inputmode="text" autocapitalize="characters" autocomplete="off" spellcheck="false" maxlength="6" aria-describedby="captcha-code" required>
+          </div>
           <button class="button" type="submit">Create account</button>
+          <p class="form-note signup-message" id="signup-message" role="status" aria-live="polite" hidden></p>
           <p class="form-note">Already registered? <a href="login.html">Log in</a></p>
         </form>
       </section>
@@ -50,5 +75,10 @@
       </div>
     </footer>
   </div>
+  <script src="../Jsss/profile-menu.js" defer></script>
+  <script src="../Jsss/cart.js" defer></script>
+  <script src="../Js/captcha.js" defer></script>
+  <script src="../Js/auth.js" defer></script>
+  <script src="../Js/navbar.js" defer></script>
 </body>
 </html>

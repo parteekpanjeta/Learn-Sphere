@@ -6,6 +6,7 @@
   <meta name="description" content="LearnSphere online learning platform">
   <title>LearnSphere</title>
   <link rel="stylesheet" href="../Csss/index.css">
+  <link rel="stylesheet" href="../Csss/profile-menu.css">
 </head>
 <body>
   <input class="theme-toggle" type="checkbox" id="theme-toggle">
@@ -29,6 +30,20 @@
           <label class="theme-switch" for="theme-toggle">Dark mode</label>
           <a class="button secondary" href="login.html">Log in</a>
           <a class="button" href="signup.html">Join</a>
+          <details class="profile-menu">
+            <summary aria-label="Open profile menu">
+              <span class="profile-avatar" aria-hidden="true"></span>
+              <span class="profile-name">Profile</span>
+              <span class="profile-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="profile-dropdown">
+              <p class="profile-dropdown-heading">LEARNER ACCOUNT</p>
+              <a class="profile-dropdown-link" href="my-courses.html">
+                <span>My Courses</span>
+              </a>
+              <button class="profile-logout" type="button" data-logout>Log out</button>
+            </div>
+          </details>
         </div>
       </div>
     </header>
@@ -70,7 +85,7 @@
                 <p class="course-meta">Technology · 12 weeks</p>
                 <h3>Advanced Generative AI</h3>
                 <p>Build useful AI workflows with practical tools and evaluation.</p>
-                <div class="course-bottom"><strong>$899</strong><a href="course-details.html">Learn more</a></div>
+                <div class="course-bottom"><strong>$899</strong><div class="course-actions"><a href="course-details.html?id=ai">Learn more</a><button class="cart-add-button" type="button" data-cart-course="ai">Add to cart</button></div></div>
               </div>
             </article>
             <article class="course-card">
@@ -79,7 +94,7 @@
                 <p class="course-meta">Design · 8 weeks</p>
                 <h3>Strategic Product Design</h3>
                 <p>Turn unclear problems into thoughtful, useful products.</p>
-                <div class="course-bottom"><strong>$749</strong><a href="course-details.html">Learn more</a></div>
+                <div class="course-bottom"><strong>$749</strong><div class="course-actions"><a href="course-details.html?id=design">Learn more</a><button class="cart-add-button" type="button" data-cart-course="design">Add to cart</button></div></div>
               </div>
             </article>
             <article class="course-card">
@@ -88,7 +103,7 @@
                 <p class="course-meta">Leadership · 6 weeks</p>
                 <h3>Emotional Intelligence</h3>
                 <p>Build the awareness and empathy that strong teams need.</p>
-                <div class="course-bottom"><strong>$599</strong><a href="course-details.html">Learn more</a></div>
+                <div class="course-bottom"><strong>$599</strong><div class="course-actions"><a href="course-details.html?id=leadership">Learn more</a><button class="cart-add-button" type="button" data-cart-course="leadership">Add to cart</button></div></div>
               </div>
             </article>
           </div>
@@ -197,5 +212,9 @@
     </footer>
   </div>
 
+  <script src="../Jsss/profile-menu.js" defer></script>
+  <script src="../Jsss/cart.js" defer></script>
+  <script src="../Js/auth.js" defer></script>
+  <script src="../Js/navbar.js" defer></script>
 </body>
 </html>

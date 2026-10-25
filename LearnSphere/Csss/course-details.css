@@ -153,6 +153,8 @@ p { margin-top: 0; }
   letter-spacing: .05em;
   text-decoration: none;
   text-transform: uppercase;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .button.secondary {
@@ -174,6 +176,20 @@ p { margin-top: 0; }
 }
 
 .section-heading p { max-width: 440px; color: var(--muted); }
+
+.enrollment-feedback {
+  margin-top: 18px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.enrollment-feedback[hidden] { display: none; }
+.enrollment-feedback a { color: var(--text); font-size: .8rem; font-weight: bold; }
 
 /* Home page */
 .hero { padding: 60px 0; }
@@ -299,6 +315,13 @@ p { margin-top: 0; }
   max-height: 720px;
   background: url("../Htmls/images/courses-atlas.png") 0 0 / 300% 200%;
 }
+
+.detail-image.image-ai { background-position: 0 0; }
+.detail-image.image-design { background-position: 50% 0; }
+.detail-image.image-leadership { background-position: 100% 0; }
+.detail-image.image-business { background-position: 0 100%; }
+.detail-image.image-story { background-position: 50% 100%; }
+.detail-image.image-data { background-position: 100% 100%; }
 
 .detail-info { align-self: center; }
 

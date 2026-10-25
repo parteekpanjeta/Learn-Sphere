@@ -296,6 +296,65 @@ p { margin-top: 0; }
 .auth-form { width: 100%; max-width: 430px; }
 .auth-form .button { width: 100%; text-align: center; }
 .form-note { margin: 18px 0; color: var(--muted); font-size: .85rem; }
+.signup-message { margin: 12px 0; font-weight: bold; }
+.signup-message[data-state="error"] { color: #a23434; }
+.signup-message[data-state="success"] { color: #287354; }
+.theme-toggle:checked ~ .site .signup-message[data-state="error"] { color: #f09a9a; }
+.theme-toggle:checked ~ .site .signup-message[data-state="success"] { color: #8ce2bd; }
+
+.captcha-challenge {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 9px;
+  padding: 8px 12px;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(94, 126, 158, .12), transparent 54%),
+    linear-gradient(115deg, rgba(234, 239, 243, .86), rgba(248, 248, 245, .96));
+  border: 1px solid var(--border);
+}
+
+.captcha-code {
+  min-width: 0;
+  flex: 1;
+  color: var(--text);
+  font-family: "Courier New", monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: .35em;
+  line-height: 1.2;
+  text-align: center;
+  user-select: none;
+}
+
+.captcha-refresh {
+  padding: 8px 11px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  font: inherit;
+  font-size: .7rem;
+  cursor: pointer;
+}
+
+.captcha-refresh:hover { color: var(--text); border-color: var(--text); }
+.captcha-refresh:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+
+.theme-toggle:checked ~ .site .captcha-challenge {
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(137, 107, 255, .15), transparent 54%),
+    linear-gradient(115deg, rgba(22, 31, 55, .94), rgba(16, 31, 44, .98));
+  border-color: rgba(167, 184, 224, .22);
+}
+
+.theme-toggle:checked ~ .site .captcha-refresh {
+  color: #c7d3ed;
+  border-color: rgba(167, 184, 224, .28);
+}
+
+.theme-toggle:checked ~ .site .captcha-refresh:hover { color: #7de6dc; border-color: #7de6dc; }
 
 /* Footer */
 .site-footer {

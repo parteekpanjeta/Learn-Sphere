@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Courses - LearnSphere</title>
+  <link rel="stylesheet" href="../Csss/courses.css">
+  <link rel="stylesheet" href="../Csss/profile-menu.css">
+  <link rel="stylesheet" href="../Csss/my-courses.css">
+</head>
+<body>
+  <input class="theme-toggle" type="checkbox" id="theme-toggle">
+  <div class="site">
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="brand" href="index.html">LearnSphere</a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="instructors.html">Faculty</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <label class="theme-switch" for="theme-toggle">Dark mode</label>
+          <details class="profile-menu">
+            <summary aria-label="Open profile menu">
+              <span class="profile-avatar" aria-hidden="true"></span>
+              <span class="profile-name">Profile</span>
+              <span class="profile-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="profile-dropdown">
+              <p class="profile-dropdown-heading">LEARNER ACCOUNT</p>
+              <a class="profile-dropdown-link" href="my-courses.html">
+                <span>My Courses</span>
+              </a>
+              <button class="profile-logout" type="button" data-logout>Log out</button>
+            </div>
+          </details>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="dashboard-heading">
+        <div class="container dashboard-heading-inner">
+          <div>
+            <p class="eyebrow">LEARNER DASHBOARD</p>
+            <h1>My Courses</h1>
+            <p class="dashboard-intro">Your learning, all in one place. Choose a course to pick up where you left off.</p>
+          </div>
+          <a class="button secondary" href="courses.html">Browse all courses</a>
+        </div>
+      </section>
+
+      <section class="section my-courses-section" aria-labelledby="my-courses-heading">
+        <div class="container">
+          <div class="my-courses-toolbar">
+            <div>
+              <p class="eyebrow">YOUR LEARNING</p>
+              <h2 id="my-courses-heading">Enrolled courses</h2>
+            </div>
+            <p class="course-count" id="enrolled-count" aria-live="polite">0 courses</p>
+          </div>
+
+          <div class="my-courses-empty" id="my-courses-empty" hidden>
+            <span class="empty-mark" aria-hidden="true">+</span>
+            <h3>Your learning journey starts here.</h3>
+            <p>Courses you enroll in will appear here, ready when you are.</p>
+            <a class="button" href="courses.html">Explore courses</a>
+          </div>
+
+          <div class="my-courses-grid" id="my-courses-grid" hidden></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <a class="brand" href="index.html">LearnSphere</a>
+            <p>Practical online education for curious, ambitious learners.</p>
+          </div>
+          <div class="footer-column">
+            <h3>Learning</h3>
+            <a href="courses.html">Browse courses</a>
+            <a href="my-courses.html">My Courses</a>
+            <a href="instructors.html">Faculty</a>
+          </div>
+          <div class="footer-column">
+            <h3>Company</h3>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Careers</a>
+            <a href="signup.html">Join LearnSphere</a>
+          </div>
+          <div class="footer-column">
+            <h3>Connect</h3>
+            <div class="connect-links">
+              <a href="contact.html">Contact us</a>
+              <a href="mailto:hello@learnsphere.edu">Email</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 LearnSphere. All rights reserved.</span>
+          <div class="legal-links">
+            <a href="contact.html">Privacy Policy</a>
+            <a href="contact.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="../Jsss/my-courses.js" defer></script>
+  <script src="../Jsss/profile-menu.js" defer></script>
+  <script src="../Jsss/cart.js" defer></script>
+  <script src="../Js/auth.js" defer></script>
+  <script src="../Js/navbar.js" defer></script>
+</body>
+</html>

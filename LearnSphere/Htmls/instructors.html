@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Faculty — LearnSphere</title>
   <link rel="stylesheet" href="../Csss/instructors.css">
+  <link rel="stylesheet" href="../Csss/profile-menu.css">
 </head>
 <body>
   <input class="theme-toggle" type="checkbox" id="theme-toggle">
@@ -13,7 +14,22 @@
       <div class="container nav-row">
         <a class="brand" href="index.html">LearnSphere</a>
         <nav class="main-nav"><a href="index.html">Home</a><a href="courses.html">Courses</a><a class="active" href="instructors.html">Faculty</a><a href="contact.html">Contact</a></nav>
-        <div class="header-actions"><label class="theme-switch" for="theme-toggle">Dark mode</label><a class="button secondary" href="login.html">Log in</a><a class="button" href="signup.html">Join</a></div>
+        <div class="header-actions"><label class="theme-switch" for="theme-toggle">Dark mode</label><a class="button secondary" href="login.html">Log in</a><a class="button" href="signup.html">Join</a>
+          <details class="profile-menu">
+            <summary aria-label="Open profile menu">
+              <span class="profile-avatar" aria-hidden="true"></span>
+              <span class="profile-name">Profile</span>
+              <span class="profile-chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="profile-dropdown">
+              <p class="profile-dropdown-heading">LEARNER ACCOUNT</p>
+              <a class="profile-dropdown-link" href="my-courses.html">
+                <span>My Courses</span>
+              </a>
+              <button class="profile-logout" type="button" data-logout>Log out</button>
+            </div>
+          </details>
+        </div>
       </div>
     </header>
 
@@ -80,5 +96,9 @@
       </div>
     </footer>
   </div>
+  <script src="../Jsss/profile-menu.js" defer></script>
+  <script src="../Jsss/cart.js" defer></script>
+  <script src="../Js/auth.js" defer></script>
+  <script src="../Js/navbar.js" defer></script>
 </body>
 </html>

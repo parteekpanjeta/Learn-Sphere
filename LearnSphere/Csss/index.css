@@ -67,7 +67,7 @@ img { display: block; width: 100%; }
 }
 
 /* CSS-only dark mode */
-.theme-toggle:checked + .site {
+.theme-toggle:checked ~ .site {
   --background: #121212;
   --card: #1d1d1d;
   --text: #f4f4f0;
@@ -179,7 +179,7 @@ p { margin-top: 0; }
   transition: right .2s;
 }
 
-.theme-toggle:checked + .site .theme-switch::after {
+.theme-toggle:checked ~ .site .theme-switch::after {
   right: 3px;
 }
 

@@ -1,0 +1,8 @@
+[
+  {
+    "id": "sample-user-001",
+    "name": "Sample Learner",
+    "email": "sample@learnsphere.edu",
+    "password": "LearnSphere123"
+  }
+]
